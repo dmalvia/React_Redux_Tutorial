@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/actions/productsActions";
 import ProductComponent from "./ProductComponent";
 
-const ProductPage = () => {
+const ProductListing = () => {
   const products = useSelector((state) => state.allProducts.products);
+
   const dispatch = useDispatch();
+
   const fetchProducts = async () => {
     const response = await axios
       .get("https://fakestoreapi.com/products")
@@ -28,4 +30,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductListing;
